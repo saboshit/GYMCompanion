@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    //General
+    <color name="backAppDark">#0D2C00</color>
+    <color name="backApp">#103900</color>
+    <color name="accent5">#00521e</color>
+    <color name="backAppLight">#1A5200</color>
+    <color name="accent3">#435200</color>
+    <color name="accent4">#649a00</color>
+    <color name="accent">#179A00</color>
+    <color name="accent2">#009a6c</color>
+    <color name="text">#323232</color>
+    <color name="textLight">#4C4C4C</color>
+    <color name="textLighter">#777777</color>
+</resources>
