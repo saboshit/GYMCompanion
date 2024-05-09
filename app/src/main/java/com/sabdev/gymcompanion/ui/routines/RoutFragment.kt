@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.sabdev.gymcompanion.databinding.FragmentRoutBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RoutFragment : Fragment() {
 
     private var _binding: FragmentRoutBinding? = null
