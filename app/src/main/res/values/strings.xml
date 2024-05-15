@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">trainingapp</string>
+    <string name="app_name">GYMCompanion</string>
     <string name="male">Man</string>
     <string name="female">Woman</string>
     <string name="height">Height</string>
