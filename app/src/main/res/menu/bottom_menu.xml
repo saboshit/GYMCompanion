@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
     <item
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/home"
         android:title="@string/home" />
+
     <item
-        android:id="@+id/routines"
+        android:id="@+id/routFragment"
         android:icon="@drawable/routines"
         android:title="@string/rout" />
+
     <item
-        android:id="@+id/bmi"
+        android:id="@+id/BMIFragment"
         android:icon="@drawable/bmi"
         android:title="@string/bmi" />
+
     <item
-        android:id="@+id/settings"
+        android:id="@+id/settFragment"
         android:icon="@drawable/settings"
         android:title="@string/sett" />
+
 </menu>

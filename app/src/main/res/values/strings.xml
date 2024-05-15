@@ -25,6 +25,25 @@
     <string name="bmi">BMI</string>
     <string name="rout">Routines</string>
     <string name="sett">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //Routines
+    <string name="rou1">Peck/triceps routine</string>
+    <string name='rou2'>Back/Biceps routine</string>
+    <string name="rou3">Legs routine</string>
+    //DescRout
+    <string name="desc1">Description</string>
+    <string name="desc2">Description</string>
+    <string name="desc3">Description</string>
+
+    //Days
+    <string name="mon">Monday</string>
+    <string name="tue">Tuesday</string>
+    <string name="wed">Wednesday</string>
+    <string name="thu">Thursday</string>
+    <string name="fri">Friday</string>
+
+    <string name="hello_blank_fragment">SEXO</string>
+    <string name="defaultAge">20</string>
+    <string name="defaultWeight">60</string>
+    <string name="defaultHeight">120 cm</string>
 </resources>

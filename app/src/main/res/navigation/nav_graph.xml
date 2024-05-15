@@ -11,15 +11,15 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/BMIFragment"
-        android:name="com.sabdev.gymcompanion.ui.bmi.BMIFragment"
-        android:label="fragment_b_m_i"
-        tools:layout="@layout/fragment_b_m_i" />
-    <fragment
         android:id="@+id/routFragment"
         android:name="com.sabdev.gymcompanion.ui.routines.RoutFragment"
         android:label="fragment_rout"
         tools:layout="@layout/fragment_rout" />
+    <fragment
+        android:id="@+id/BMIFragment"
+        android:name="com.sabdev.gymcompanion.ui.bmi.BMIFragment"
+        android:label="fragment_b_m_i"
+        tools:layout="@layout/fragment_b_m_i" />
     <fragment
         android:id="@+id/settFragment"
         android:name="com.sabdev.gymcompanion.ui.sett.SettFragment"

@@ -4,15 +4,20 @@
     <color name="white">#FFFFFFFF</color>
 
     //General
-    <color name="backAppDark">#0D2C00</color>
+    <color name="backAppDark">#071700</color>
     <color name="backApp">#103900</color>
     <color name="accent5">#00521e</color>
     <color name="backAppLight">#1A5200</color>
+    <color name="BackComp">#27331D</color>
     <color name="accent3">#435200</color>
     <color name="accent4">#649a00</color>
-    <color name="accent">#179A00</color>
+    <color name="accent">#33B60F</color>
     <color name="accent2">#009a6c</color>
     <color name="text">#323232</color>
     <color name="textLight">#4C4C4C</color>
     <color name="textLighter">#777777</color>
+    <color name="Backg_Component_Selected">#162811</color>
+    <color name="back_nav">#0A2200</color>
+    <color name="unselected">#8A8A8A</color>
+    <color name="font">#FFFFFFFF</color>
 </resources>

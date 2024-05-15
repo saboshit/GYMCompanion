@@ -14,23 +14,22 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/bottomNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/backAppDark"
+        app:itemActiveIndicatorStyle="@null"
         app:itemIconTint="@color/bottom_nav_selected"
         app:itemTextColor="@color/bottom_nav_selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_menu"
-        app:itemActiveIndicatorStyle="@null"
-        tools:ignore="MissingConstraints" />
-
+        app:menu="@menu/bottom_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
