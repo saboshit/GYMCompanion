@@ -1,7 +1,11 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.GYMCompanion" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.GYMCompanion" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="background">@color/backApp</item>
+        <item name="cardBackgroundColor">@color/backCard</item>
+        <item name="android:navigationBarColor">@color/backNav</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="buttonTint">@color/btnTint</item>
+        <item name="textFillColor">@color/font</item>
     </style>
 </resources>

@@ -1,9 +1,11 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Base.Theme.GYMCompanion" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <!-- light theme -->
+    <style name="Base.Theme.GYMCompanion" parent="Theme.Material3.Light.NoActionBar">
+        <item name="background">@color/backApp</item>
+        <item name="colorAccent">@color/backCard</item>
+        <item name="backgroundTint">@color/accent</item>
+        <item name="buttonIconTint">@color/btnTint</item>
+        <item name="textFillColor">@color/font</item>
     </style>
-
     <style name="Theme.GYMCompanion" parent="Base.Theme.GYMCompanion" />
 </resources>

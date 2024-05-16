@@ -103,13 +103,13 @@ class BMIFragment : Fragment() {
             viewMale.setCardBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.BackCompSelected
+                    R.color.btnTint
                 )
             )
             viewFemale.setCardBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.backApp
+                    R.color.backCard
                 )
             )
         }
@@ -118,13 +118,13 @@ class BMIFragment : Fragment() {
             viewFemale.setCardBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.BackCompSelected
+                    R.color.btnTint
                 )
             )
             viewMale.setCardBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
-                    R.color.backApp
+                    R.color.backCard
                 )
             )
         }

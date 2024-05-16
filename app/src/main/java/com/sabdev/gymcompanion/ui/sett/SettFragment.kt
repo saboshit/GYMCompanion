@@ -1,6 +1,7 @@
 package com.sabdev.gymcompanion.ui.sett
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.net.Uri
@@ -8,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.sabdev.gymcompanion.LocaleHelper
@@ -24,6 +26,8 @@ class SettFragment : Fragment() {
     private lateinit var btnShare: FloatingActionButton
     private lateinit var btnAbout: FloatingActionButton
     private lateinit var btnLanguage: FloatingActionButton
+    private lateinit var btnTheme: FloatingActionButton
+
     private val languages = listOf("English", "Español")
 
     private var _binding: FragmentSettBinding? = null
@@ -40,11 +44,25 @@ class SettFragment : Fragment() {
         return binding.root
     }
 
+
     private fun initComponents() {
         btnGit = binding.btnGit
         btnShare = binding.btnShare
         btnAbout = binding.btnAbout
         btnLanguage = binding.btnLanguage
+        btnTheme = binding.btnTheme
+    }
+    private fun isNightModeActive(): Boolean {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return false
+        return sharedPref.getBoolean("NIGHT_MODE", false)
+    }
+
+    private fun setNightMode(isNightMode: Boolean) {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
+        with (sharedPref.edit()) {
+            putBoolean("NIGHT_MODE", isNightMode)
+            apply()
+        }
     }
 
     private fun initListeners() {
@@ -96,6 +114,19 @@ class SettFragment : Fragment() {
                     startActivity(intent)
                 }
             builder.create().show()
+        }
+        btnTheme.setOnClickListener {
+            if (isNightModeActive()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                setNightMode(false)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                setNightMode(true)
+            }
+            // Restart the activity for the theme change to take effect
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
         }
     }
 }

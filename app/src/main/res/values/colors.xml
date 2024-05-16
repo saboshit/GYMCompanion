@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    //Light theme
+    <color name="backApp">#71A173</color>
+    <color name="backCard">#185700</color>
+    <color name="backNav">#185700</color>
+    <color name="accent">#003A00</color>
+    <color name="btnTint">#458100</color>
+    <color name="font">#FFFFFF</color>
 
-    //General
-    <color name="backAppDark">#071700</color>
-    <color name="backApp">#103900</color>
-    <color name="accent5">#00521e</color>
-    <color name="backAppLight">#1A5200</color>
-    <color name="BackComp">#27331D</color>
-    <color name="accent3">#435200</color>
-    <color name="accent4">#649a00</color>
-    <color name="accent">#33B60F</color>
-    <color name="accent2">#009a6c</color>
-    <color name="text">#323232</color>
-    <color name="textLight">#4C4C4C</color>
-    <color name="textLighter">#777777</color>
-    <color name="BackCompSelected">#0D2E00</color>
-    <color name="back_nav">#0A2200</color>
-    <color name="unselected">#8A8A8A</color>
-    <color name="font">#FFFFFFFF</color>
 </resources>

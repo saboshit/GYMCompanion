@@ -5,7 +5,7 @@
     android:id="@+id/BMIResult"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backAppDark"
+    android:background="@color/backApp"
     tools:context=".ui.home.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
@@ -24,7 +24,7 @@
         android:id="@+id/bottomNav"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/backApp"
+        android:background="@color/backNav"
         app:itemActiveIndicatorStyle="@null"
         app:itemIconTint="@color/bottom_nav_selected"
         app:itemTextColor="@color/bottom_nav_selected"

@@ -49,6 +49,7 @@
     <string name="defaultHeight">120 cm</string>
 
     <string name="selectLang" tools:ignore="MissingTranslation">Seleccionar idioma</string>
+    <string name="theme">Cambiar tema</string>
     <string name="lang">Lenguaje</string>
     <string name="share">Compartir</string>
     <string name="about">Acerca</string>

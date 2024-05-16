@@ -46,6 +46,7 @@
     <string name="fri">Friday</string>
 
     //Settings
+    <string name="theme" tools:ignore="MissingTranslation">Change theme</string>
     <string name="lang" tools:ignore="MissingTranslation">Language</string>
     <string name="share" tools:ignore="MissingTranslation">Share</string>
     <string name="about" tools:ignore="MissingTranslation">About</string>
