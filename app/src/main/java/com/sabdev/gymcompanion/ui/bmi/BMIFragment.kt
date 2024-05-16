@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
+import com.sabdev.gymcompanion.R
 import com.sabdev.gymcompanion.databinding.FragmentBMIBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.text.DecimalFormat
@@ -78,20 +80,53 @@ class BMIFragment : Fragment() {
             setWeight()
         }
         btnSubtractWeight.setOnClickListener {
-            currentWeight -= 1
-            setWeight()
+            if (currentWeight > 0) {
+                currentWeight -= 1
+                setWeight()
+            }
         }
         btnPlusAge.setOnClickListener {
             currentAge += 1
             setAge()
         }
         btnSubtractAge.setOnClickListener {
-            currentAge -= 1
-            setAge()
+            if (currentAge > 0) {
+                currentAge -= 1
+                setAge()
+            }
         }
         btnCalculate.setOnClickListener {
             val result = calculateIMC()
             navigateToResult(result)
+        }
+        viewMale.setOnClickListener {
+            viewMale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.BackCompSelected
+                )
+            )
+            viewFemale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.backApp
+                )
+            )
+        }
+
+        viewFemale.setOnClickListener {
+            viewFemale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.BackCompSelected
+                )
+            )
+            viewMale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.backApp
+                )
+            )
         }
     }
 
@@ -103,8 +138,10 @@ class BMIFragment : Fragment() {
 
     private fun calculateIMC(): Double {
         val df = DecimalFormat("#.##")
-        val imc = currentWeight / (currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100)
-        return df.format(imc).toDouble()
+        val heightInMeters = currentHeight.toDouble() / 100
+        val imc = currentWeight / (heightInMeters * heightInMeters)
+        val imcString = df.format(imc).replace(",", ".")
+        return imcString.toDouble()
     }
 
     private fun setAge() {

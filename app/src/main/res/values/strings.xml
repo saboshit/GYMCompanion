@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">GYMCompanion</string>
     <string name="male">Man</string>
     <string name="female">Woman</string>
@@ -10,6 +10,9 @@
     <string name="recalc">Recalculate</string>
 
     //BMIStrings
+    <string name="defaultAge">20</string>
+    <string name="defaultWeight">60</string>
+    <string name="defaultHeight">120 cm</string>
     <string name="low">Low weight</string>
     <string name="descLow">You are below your optimal weight</string>
     <string name="nor">Normal weight</string>
@@ -42,8 +45,13 @@
     <string name="thu">Thursday</string>
     <string name="fri">Friday</string>
 
+    //Settings
+    <string name="lang" tools:ignore="MissingTranslation">Language</string>
+    <string name="share" tools:ignore="MissingTranslation">Share</string>
+    <string name="about" tools:ignore="MissingTranslation">About</string>
+    <string name="git" tools:ignore="MissingTranslation">GitHub</string>
+
+    <string name="selectLang" tools:ignore="MissingTranslation">Select language</string>
+
     <string name="hello_blank_fragment">SEXO</string>
-    <string name="defaultAge">20</string>
-    <string name="defaultWeight">60</string>
-    <string name="defaultHeight">120 cm</string>
 </resources>

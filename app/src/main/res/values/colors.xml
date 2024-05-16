@@ -15,7 +15,7 @@
     <color name="text">#323232</color>
     <color name="textLight">#4C4C4C</color>
     <color name="textLighter">#777777</color>
-    <color name="Backg_Component_Selected">#162811</color>
+    <color name="BackCompSelected">#0D2E00</color>
     <color name="back_nav">#0A2200</color>
     <color name="unselected">#8A8A8A</color>
     <color name="font">#FFFFFFFF</color>

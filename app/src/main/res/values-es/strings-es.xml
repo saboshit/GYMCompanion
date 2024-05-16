@@ -1,0 +1,56 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">GYMCompanion</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="age">Edad</string>
+    <string name="calc">Calcular</string>
+    <string name="result">Tu resultado</string>
+    <string name="recalc">Recalcular</string>
+
+    <!--BMIStrings-->
+    <string name="low">Bajo peso</string>
+    <string name="descLow">Estás por debajo de tu peso óptimo</string>
+    <string name="nor">Peso normal</string>
+    <string name="descNor">Estás en tu peso óptimo</string>
+    <string name="over">Sobrepeso</string>
+    <string name="desOver">Estás por encima de tu peso óptimo</string>
+    <string name="obe">Obesidad</string>
+    <string name="desObe">Estás muy por encima de tu peso óptimo</string>
+    <string name="error">Error</string>
+
+    <!--NavHostStrings-->
+    <string name="home">Inicio</string>
+    <string name="bmi">IMC</string>
+    <string name="rout">Rutinas</string>
+    <string name="sett">Ajustes</string>
+
+    <!--Routines-->
+    <string name="rou1">Rutina de pectorales/tríceps</string>
+    <string name="rou2">Rutina de espalda/bíceps</string>
+    <string name="rou3">Rutina de piernas</string>
+
+    <!--DescRout-->
+    <string name="desc1">Descripción</string>
+    <string name="desc2">Descripción</string>
+    <string name="desc3">Descripción</string>
+
+    <!--Days-->
+    <string name="mon">Lunes</string>
+    <string name="tue">Martes</string>
+    <string name="wed">Miércoles</string>
+    <string name="thu">Jueves</string>
+    <string name="fri">Viernes</string>
+
+    <string name="hello_blank_fragment">SEXO</string>
+    <string name="defaultAge">20</string>
+    <string name="defaultWeight">60</string>
+    <string name="defaultHeight">120 cm</string>
+
+    <string name="selectLang" tools:ignore="MissingTranslation">Seleccionar idioma</string>
+    <string name="lang">Lenguaje</string>
+    <string name="share">Compartir</string>
+    <string name="about">Acerca</string>
+    <string name="git">GitHub</string>
+</resources>
