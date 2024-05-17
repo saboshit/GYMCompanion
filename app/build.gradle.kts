@@ -43,12 +43,15 @@ android {
 
 dependencies {
 
+    //noinspection UseTomlInstead
     implementation("com.google.dagger:hilt-android:2.40.1")
     kapt("com.google.dagger:hilt-compiler:2.40.1")
 
     val navVersion = "2.4.1"
 
+    //noinspection GradleDependency
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    //noinspection GradleDependency
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     implementation(libs.androidx.core.ktx)

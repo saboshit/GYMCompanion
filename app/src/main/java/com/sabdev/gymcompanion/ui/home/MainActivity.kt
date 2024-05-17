@@ -3,6 +3,7 @@ package com.sabdev.gymcompanion.ui.home
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -21,11 +22,29 @@ class MainActivity : AppCompatActivity() {
         super.attachBaseContext(LocaleHelper.onAttach(newBase))
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (getThemePreference()) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
+    }
+
+    fun toggleTheme() {
+        val isDarkMode = getThemePreference()
+        setThemePreference(!isDarkMode)
+        if (!isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
     }
 
     private fun initUI() {
@@ -37,5 +56,18 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
         navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
+    }
+
+    fun setThemePreference(isDarkMode: Boolean) {
+        val sharedPref = getSharedPreferences("ThemePref", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            putBoolean("isDarkMode", isDarkMode)
+            apply()
+        }
+    }
+
+    fun getThemePreference(): Boolean {
+        val sharedPref = getSharedPreferences("ThemePref", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("isDarkMode", false)
     }
 }

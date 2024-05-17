@@ -52,6 +52,7 @@ class SettFragment : Fragment() {
         btnLanguage = binding.btnLanguage
         btnTheme = binding.btnTheme
     }
+
     private fun isNightModeActive(): Boolean {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return false
         return sharedPref.getBoolean("NIGHT_MODE", false)
@@ -59,7 +60,7 @@ class SettFragment : Fragment() {
 
     private fun setNightMode(isNightMode: Boolean) {
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE) ?: return
-        with (sharedPref.edit()) {
+        with(sharedPref.edit()) {
             putBoolean("NIGHT_MODE", isNightMode)
             apply()
         }
@@ -116,6 +117,7 @@ class SettFragment : Fragment() {
             builder.create().show()
         }
         btnTheme.setOnClickListener {
+            (activity as MainActivity).toggleTheme()
             if (isNightModeActive()) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 setNightMode(false)
@@ -123,10 +125,6 @@ class SettFragment : Fragment() {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 setNightMode(true)
             }
-            // Restart the activity for the theme change to take effect
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
         }
     }
 }

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">GYMCompanion</string>
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
@@ -48,7 +48,7 @@
     <string name="defaultWeight">60</string>
     <string name="defaultHeight">120 cm</string>
 
-    <string name="selectLang" tools:ignore="MissingTranslation">Seleccionar idioma</string>
+    <string name="selectLang">Seleccionar idioma</string>
     <string name="theme">Cambiar tema</string>
     <string name="lang">Lenguaje</string>
     <string name="share">Compartir</string>

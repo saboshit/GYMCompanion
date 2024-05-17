@@ -1,4 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="hello_blank_fragment">SEXO</string>
+
+
     <string name="app_name">GYMCompanion</string>
     <string name="male">Man</string>
     <string name="female">Woman</string>
@@ -51,8 +54,6 @@
     <string name="share" tools:ignore="MissingTranslation">Share</string>
     <string name="about" tools:ignore="MissingTranslation">About</string>
     <string name="git" tools:ignore="MissingTranslation">GitHub</string>
-
     <string name="selectLang" tools:ignore="MissingTranslation">Select language</string>
 
-    <string name="hello_blank_fragment">SEXO</string>
 </resources>
