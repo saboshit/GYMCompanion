@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import com.sabdev.gymcompanion.R
 import com.sabdev.gymcompanion.databinding.FragmentRoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,39 +27,21 @@ class RoutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.monCardView.setOnClickListener {
-            if (binding.monDescTextView.visibility == View.GONE) {
-                binding.monDescTextView.visibility = View.VISIBLE
-            } else {
-                binding.monDescTextView.visibility = View.GONE
-            }
-        }
-        binding.tueCardView.setOnClickListener {
-            if (binding.tueDescTextView.visibility == View.GONE) {
-                binding.tueDescTextView.visibility = View.VISIBLE
-            } else {
-                binding.tueDescTextView.visibility = View.GONE
-            }
-        }
-        binding.wedCardView.setOnClickListener {
-            if (binding.wedDescTextView.visibility == View.GONE) {
-                binding.wedDescTextView.visibility = View.VISIBLE
-            } else {
-                binding.wedDescTextView.visibility = View.GONE
-            }
-        }
-        binding.thuCardView.setOnClickListener {
-            if (binding.thuDescTextView.visibility == View.GONE) {
-                binding.thuDescTextView.visibility = View.VISIBLE
-            } else {
-                binding.thuDescTextView.visibility = View.GONE
-            }
-        }
-        binding.friCardView.setOnClickListener {
-            if (binding.friDescTextView.visibility == View.GONE) {
-                binding.friDescTextView.visibility = View.VISIBLE
-            } else {
-                binding.friDescTextView.visibility = View.GONE
+        val daysOfWeek = listOf(
+            Pair(binding.monCardView, binding.monDescTextView),
+            Pair(binding.tueCardView, binding.tueDescTextView),
+            Pair(binding.wedCardView, binding.wedDescTextView),
+            Pair(binding.thuCardView, binding.thuDescTextView),
+            Pair(binding.friCardView, binding.friDescTextView)
+        )
+
+        for ((cardView, descTextView) in daysOfWeek) {
+            cardView.setOnClickListener {
+                if (descTextView.visibility == View.GONE) {
+                    descTextView.visibility = View.VISIBLE
+                } else {
+                    descTextView.visibility = View.GONE
+                }
             }
         }
     }

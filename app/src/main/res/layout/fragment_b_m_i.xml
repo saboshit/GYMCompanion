@@ -119,7 +119,10 @@
                 android:valueFrom="120"
                 android:valueTo="200"
                 app:haloColor="@color/btnTint"
-                app:thumbColor="@color/btnTint" />
+                app:labelBehavior="gone"
+                app:thumbColor="@color/btnTint"
+                app:trackColorActive="@color/btnTint"
+                app:trackColorInactive="@color/accent" />
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
