@@ -7,5 +7,6 @@
         <item name="colorAccent">@color/accent</item>
         <item name="buttonTint">@color/btnTint</item>
         <item name="textFillColor">@color/font</item>
+        <item name="colorPrimaryDark">@color/backApp</item>
     </style>
 </resources>
