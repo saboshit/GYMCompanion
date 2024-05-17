@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     //Dark theme
-    <color name="backApp" tools:ignore="MissingDefaultResource">#0A2200</color>
-    <color name="backCard" tools:ignore="MissingDefaultResource">#103900</color>
-    <color name="backNav" tools:ignore="MissingDefaultResource">#103900</color>
-    <color name="accent" tools:ignore="MissingDefaultResource">#00521e</color>
-    <color name="btnTint" tools:ignore="MissingDefaultResource">#33B60F</color>
-    <color name="font" tools:ignore="MissingDefaultResource">#FFFFFFFF</color>
+    <color name="backApp">#0A2200</color>
+    <color name="backCard">#103900</color>
+    <color name="backNav">#103900</color>
+    <color name="accent">#00521e</color>
+    <color name="btnTint">#33B60F</color>
+    <color name="font">#FFFFFFFF</color>
+    <color name="grayAccent">#939393</color>
 
+    //NavColors
+    <color name="nonSelected">#939393</color>
+    <color name="selected">#33B60F</color>
 </resources>

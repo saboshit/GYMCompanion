@@ -48,12 +48,17 @@
     <string name="thu">Thursday</string>
     <string name="fri">Friday</string>
 
+    //welcome
+    <string name="gm">Good morning</string>
+    <string name="ga">Good afternoon</string>
+    <string name="ge">Good evening</string>
+
     //Settings
-    <string name="theme" tools:ignore="MissingTranslation">Change theme</string>
-    <string name="lang" tools:ignore="MissingTranslation">Language</string>
-    <string name="share" tools:ignore="MissingTranslation">Share</string>
-    <string name="about" tools:ignore="MissingTranslation">About</string>
-    <string name="git" tools:ignore="MissingTranslation">GitHub</string>
-    <string name="selectLang" tools:ignore="MissingTranslation">Select language</string>
+    <string name="theme">Change theme</string>
+    <string name="lang">Language</string>
+    <string name="share">Share</string>
+    <string name="about">About</string>
+    <string name="git">GitHub</string>
+    <string name="selectLang">Select language</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package com.sabdev.gymcompanion.ui.bmi
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,10 +21,15 @@ import java.text.DecimalFormat
 @AndroidEntryPoint
 class BMIFragment : Fragment() {
 
+    override fun onPause() {
+        super.onPause()
+        saveData()
+    }
 
     private var _binding: FragmentBMIBinding? = null
     private val binding get() = _binding!!
 
+    private var selectedGender: String = "Male"
     private var currentWeight: Int = 70
     private var currentAge: Int = 30
     private var currentHeight: Int = 120
@@ -70,6 +76,19 @@ class BMIFragment : Fragment() {
     }
 
     private fun initListeners() {
+        rsHeight.addOnSliderTouchListener(object : RangeSlider.OnSliderTouchListener {
+            override fun onStartTrackingTouch(slider: RangeSlider) {
+                // No hacer nada cuando el usuario empieza a arrastrar el thumb del slider
+            }
+
+            override fun onStopTrackingTouch(slider: RangeSlider) {
+                // Guardar los datos cuando el usuario deja de arrastrar el thumb del slider
+                val df = DecimalFormat("#.##")
+                currentHeight = df.format(slider.values[0]).toInt()
+                tvHeight.text = "$currentHeight cm"
+                saveData()
+            }
+        })
         rsHeight.addOnChangeListener { _, value, _ ->
             val df = DecimalFormat("#.##")
             currentHeight = df.format(value).toInt()
@@ -78,21 +97,25 @@ class BMIFragment : Fragment() {
         btnPlusWeight.setOnClickListener {
             currentWeight += 1
             setWeight()
+            saveData()
         }
         btnSubtractWeight.setOnClickListener {
             if (currentWeight > 0) {
                 currentWeight -= 1
                 setWeight()
+                saveData()
             }
         }
         btnPlusAge.setOnClickListener {
             currentAge += 1
             setAge()
+            saveData()
         }
         btnSubtractAge.setOnClickListener {
             if (currentAge > 0) {
                 currentAge -= 1
                 setAge()
+                saveData()
             }
         }
         btnCalculate.setOnClickListener {
@@ -100,6 +123,7 @@ class BMIFragment : Fragment() {
             navigateToResult(result)
         }
         viewMale.setOnClickListener {
+            selectedGender = "Male"
             viewMale.setCardBackgroundColor(
                 ContextCompat.getColor(
                     requireContext(),
@@ -112,22 +136,25 @@ class BMIFragment : Fragment() {
                     R.color.backCard
                 )
             )
+            saveData()
+        }
+        viewFemale.setOnClickListener {
+            selectedGender = "Female"
+            viewFemale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.btnTint
+                )
+            )
+            viewMale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.backCard
+                )
+            )
+            saveData()
         }
 
-        viewFemale.setOnClickListener {
-            viewFemale.setCardBackgroundColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.btnTint
-                )
-            )
-            viewMale.setCardBackgroundColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.backCard
-                )
-            )
-        }
     }
 
     private fun navigateToResult(result: Double) {
@@ -144,6 +171,30 @@ class BMIFragment : Fragment() {
         return imcString.toDouble()
     }
 
+    private fun saveData() {
+        val sharedPreferences =
+            this.activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.apply {
+            putInt("SAVED_WEIGHT", currentWeight)
+            putInt("SAVED_AGE", currentAge)
+            putInt("SAVED_HEIGHT", currentHeight)
+            putString("SAVED_GENDER", selectedGender)
+        }?.apply()
+    }
+
+    private fun loadData() {
+        val sharedPreferences =
+            this.activity?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        currentWeight = sharedPreferences?.getInt("SAVED_WEIGHT", 70) ?: 70
+        currentAge = sharedPreferences?.getInt("SAVED_AGE", 30) ?: 30
+        currentHeight = sharedPreferences?.getInt("SAVED_HEIGHT", 120) ?: 120
+        selectedGender = sharedPreferences?.getString("SAVED_GENDER", "Male") ?: "Male"
+
+        // Actualizar el valor del RangeSlider
+        rsHeight.values = listOf(currentHeight.toFloat())
+    }
+
     private fun setAge() {
         tvAge.text = currentAge.toString()
     }
@@ -153,8 +204,36 @@ class BMIFragment : Fragment() {
     }
 
     private fun initUI() {
+        loadData()
         setWeight()
         setAge()
+        if (selectedGender == "Male") {
+            viewMale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.btnTint
+                )
+            )
+            viewFemale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.backCard
+                )
+            )
+        } else {
+            viewFemale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.btnTint
+                )
+            )
+            viewMale.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    requireContext(),
+                    R.color.backCard
+                )
+            )
+        }
     }
 }
 

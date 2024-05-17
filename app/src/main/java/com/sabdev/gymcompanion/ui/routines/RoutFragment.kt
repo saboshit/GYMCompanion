@@ -24,28 +24,6 @@ class RoutFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val daysOfWeek = listOf(
-            Pair(binding.monCardView, binding.monDescTextView),
-            Pair(binding.tueCardView, binding.tueDescTextView),
-            Pair(binding.wedCardView, binding.wedDescTextView),
-            Pair(binding.thuCardView, binding.thuDescTextView),
-            Pair(binding.friCardView, binding.friDescTextView)
-        )
-
-        for ((cardView, descTextView) in daysOfWeek) {
-            cardView.setOnClickListener {
-                if (descTextView.visibility == View.GONE) {
-                    descTextView.visibility = View.VISIBLE
-                } else {
-                    descTextView.visibility = View.GONE
-                }
-            }
-        }
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
