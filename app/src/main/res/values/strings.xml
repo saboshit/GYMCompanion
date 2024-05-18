@@ -49,9 +49,9 @@
     <string name="fri">Friday</string>
 
     //welcome
-    <string name="gm">Good morning</string>
-    <string name="ga">Good afternoon</string>
-    <string name="ge">Good evening</string>
+    <string name="gm">Good morning, %1$s</string>
+    <string name="ga">Good afternoon, %1$s</string>
+    <string name="ge">Good evening, %1$s</string>
 
     //Settings
     <string name="theme">Change theme</string>
@@ -60,5 +60,9 @@
     <string name="about">About</string>
     <string name="git">GitHub</string>
     <string name="selectLang">Select language</string>
+
+    //Login
+    <string name="name">Name</string>
+    <string name="enter">Enter</string>
 
 </resources>

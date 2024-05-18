@@ -1,15 +1,22 @@
 <resources>
+    <!--App-->
     <string name="app_name">GYMCompanion</string>
+
+    <!--Login-->
+    <string name="name">Nombre</string>
+    <string name="enter">Entrar</string>
+
+    <!--User Info-->
     <string name="male">Hombre</string>
     <string name="female">Mujer</string>
     <string name="height">Altura</string>
     <string name="weight">Peso</string>
     <string name="age">Edad</string>
+
+    <!--BMIStrings-->
     <string name="calc">Calcular</string>
     <string name="result">Tu resultado</string>
     <string name="recalc">Recalcular</string>
-
-    <!--BMIStrings-->
     <string name="low">Bajo peso</string>
     <string name="descLow">Estás por debajo de tu peso óptimo</string>
     <string name="nor">Peso normal</string>
@@ -43,18 +50,22 @@
     <string name="thu">Jueves</string>
     <string name="fri">Viernes</string>
 
+    <!--User Info-->
     <string name="hello_blank_fragment">SEXO</string>
     <string name="defaultAge">20</string>
     <string name="defaultWeight">60</string>
     <string name="defaultHeight">120 cm</string>
 
+    <!--Settings-->
     <string name="selectLang">Seleccionar idioma</string>
-    <string name="gm">Buenos días</string>
-    <string name="ga">Buenas tardes</string>
     <string name="theme">Cambiar tema</string>
     <string name="lang">Lenguaje</string>
     <string name="share">Compartir</string>
     <string name="about">Acerca</string>
     <string name="git">GitHub</string>
-    <string name="ge">Buenas noches</string>
+
+    <!--welcome-->
+    <string name="gm">Buenos días, %1$s</string>
+    <string name="ga">Buenas tardes, %1$s</string>
+    <string name="ge">Buenas noches, %1$s</string>
 </resources>
