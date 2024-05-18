@@ -60,6 +60,8 @@
     <string name="about">About</string>
     <string name="git">GitHub</string>
     <string name="selectLang">Select language</string>
+    <string name="abt">I\'m development this app alone, be patient, I\'m working on it</string>
+    <string name="shareApp">¡Hey! Look at this new app for the gym, you have to try it!</string>
 
     //Login
     <string name="name">Name</string>

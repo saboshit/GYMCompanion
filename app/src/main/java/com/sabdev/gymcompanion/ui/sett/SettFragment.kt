@@ -74,7 +74,7 @@ class SettFragment : Fragment() {
         }
         btnAbout.setOnClickListener {
             val builder = AlertDialog.Builder(requireContext())
-            builder.setMessage(getString(R.string.low) + "\nhttps://github.com/saboshit/GYMCompanion")
+            builder.setMessage(getString(R.string.abt))
                 .setPositiveButton("OK", DialogInterface.OnClickListener { dialog, id ->
                 })
             builder.create().show()
@@ -84,7 +84,7 @@ class SettFragment : Fragment() {
                 action = Intent.ACTION_SEND
                 putExtra(
                     Intent.EXTRA_TEXT,
-                    getString(R.string.low) + "\nhttps://github.com/saboshit/GYMCompanion"
+                    getString(R.string.shareApp) + "\nhttps://github.com/saboshit/GYMCompanion"
                 )
                 type = "text/plain"
             }

@@ -63,6 +63,9 @@
     <string name="share">Compartir</string>
     <string name="about">Acerca</string>
     <string name="git">GitHub</string>
+    <string name="abt">Estoy desarrollando esto solo, tenme paciencia o sos gay?</string>
+    <string name="shareApp">¡Hey! Mira esta nueva app para el gimnasio, deberías probarla!</string>
+
 
     <!--welcome-->
     <string name="gm">Buenos días, %1$s</string>
