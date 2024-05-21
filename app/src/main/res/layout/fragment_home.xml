@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/HomeFragment"
     android:layout_width="match_parent"
@@ -7,21 +8,30 @@
     android:padding="20dp"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="RedundantNamespace,UselessParent">
+        android:backgroundTint="@color/backCard"
+        app:cardCornerRadius="18dp">
 
-        <TextView
-            android:id="@+id/tvGreeting"
-            android:layout_width="wrap_content"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/font"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </RelativeLayout>
+            tools:ignore="RedundantNamespace,UselessParent">
+
+            <TextView
+                android:id="@+id/tvGreeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/font"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
 
 </FrameLayout>

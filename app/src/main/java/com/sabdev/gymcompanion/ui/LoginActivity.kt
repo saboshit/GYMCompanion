@@ -3,6 +3,7 @@ package com.sabdev.gymcompanion.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -42,16 +43,24 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            // Save the login state and the username when the Submit button is clicked
-            val editor = sharedPreferences.edit()
-            editor.putBoolean("isLoggedIn", true)
-            editor.putString("username", binding.etName.text.toString())
-            editor.apply()
+            val username = binding.etName.text.toString()
 
-            // Redirect to MainActivity
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            // Check if the username field is empty
+            if (username.isEmpty()) {
+                Toast.makeText(this, "Por favor, ingresa un nombre de usuario", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
+                // Save the login state and the username when the Submit button is clicked
+                val editor = sharedPreferences.edit()
+                editor.putBoolean("isLoggedIn", true)
+                editor.putString("username", username)
+                editor.apply()
+
+                // Redirect to MainActivity
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 }
